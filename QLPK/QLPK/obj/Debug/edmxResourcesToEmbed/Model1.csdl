@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="qlpk1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BacSi">
+    <Key>
+      <PropertyRef Name="MaBS" />
+    </Key>
+    <Property Name="MaBS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoBS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenBS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Nhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Luong" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="Khoa1" Relationship="Self.FK__BacSi__Khoa__4CA06362" FromRole="BacSi" ToRole="Khoa" />
+    <NavigationProperty Name="NhomDoiTuong" Relationship="Self.FK__BacSi__Nhom__4D94879B" FromRole="BacSi" ToRole="NhomDoiTuong" />
+    <NavigationProperty Name="BenhNhans" Relationship="Self.FK_BenhNhan_BacSi" FromRole="BacSi" ToRole="BenhNhan" />
+  </EntityType>
+  <EntityType Name="BenhAn">
+    <Key>
+      <PropertyRef Name="MaBA" />
+    </Key>
+    <Property Name="MaBA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="0" />
+    <Property Name="KqDieuTri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDungKham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TinhTrang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BenhLy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HuongDieuTri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deleted" Type="Boolean" />
+    <NavigationProperty Name="BenhNhan1" Relationship="Self.FK__BenhAn__BenhNhan__4E88ABD4" FromRole="BenhAn" ToRole="BenhNhan" />
+    <NavigationProperty Name="BenhNhan2" Relationship="Self.FK__BenhAn__BenhNhan__4F7CD00D" FromRole="BenhAn" ToRole="BenhNhan" />
+  </EntityType>
+  <EntityType Name="BenhNhan">
+    <Key>
+      <PropertyRef Name="MaBenhNhan" />
+    </Key>
+    <Property Name="MaBenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoBN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenBN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BacSi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="BacSi1" Relationship="Self.FK_BenhNhan_BacSi" FromRole="BenhNhan" ToRole="BacSi" />
+    <NavigationProperty Name="BenhAns" Relationship="Self.FK__BenhAn__BenhNhan__4E88ABD4" FromRole="BenhNhan" ToRole="BenhAn" />
+    <NavigationProperty Name="BenhAns1" Relationship="Self.FK__BenhAn__BenhNhan__4F7CD00D" FromRole="BenhNhan" ToRole="BenhAn" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__BenhNhan__5535A963" FromRole="BenhNhan" ToRole="HoaDon" />
+    <NavigationProperty Name="PhieuNhapViens" Relationship="Self.FK__PhieuNhap__BenhN__59FA5E80" FromRole="BenhNhan" ToRole="PhieuNhapVien" />
+    <NavigationProperty Name="PhieuXetNghiems" Relationship="Self.FK__PhieuXetN__BenhN__5CD6CB2B" FromRole="BenhNhan" ToRole="PhieuXetNghiem" />
+    <NavigationProperty Name="PhieuXuatViens" Relationship="Self.FK__PhieuXuat__BenhN__5DCAEF64" FromRole="BenhNhan" ToRole="PhieuXuatVien" />
+    <NavigationProperty Name="Khoa1" Relationship="Self.FK_BenhNhan_Khoa" FromRole="BenhNhan" ToRole="Khoa" />
+    <NavigationProperty Name="NhomDoiTuong" Relationship="Self.FK_BenhNhan_NhomDoiTuong" FromRole="BenhNhan" ToRole="NhomDoiTuong" />
+    <NavigationProperty Name="PhieuDieuTris" Relationship="Self.FK_PhieuDieuTri_BenhNhan" FromRole="BenhNhan" ToRole="PhieuDieuTri" />
+  </EntityType>
+  <EntityType Name="DichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenDV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_DichVu" FromRole="DichVu" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="DonThuoc">
+    <Key>
+      <PropertyRef Name="MaDT" />
+      <PropertyRef Name="MaThuoc" />
+    </Key>
+    <Property Name="MaDT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="HuongDan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaThuoc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Thuoc" Relationship="Self.FK__DonThuoc__MaThuo__534D60F1" FromRole="DonThuoc" ToRole="Thuoc" />
+  </EntityType>
+  <EntityType Name="Giuong">
+    <Key>
+      <PropertyRef Name="MaGiuong" />
+    </Key>
+    <Property Name="MaGiuong" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STT" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Phong" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Phong1" Relationship="Self.FK_Giuong_Phong" FromRole="Giuong" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="DichVu" />
+    </Key>
+    <Property Name="MaHD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DichVu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="0" />
+    <Property Name="NguoiLap" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NgayKham" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="BenhNhan1" Relationship="Self.FK__HoaDon__BenhNhan__5535A963" FromRole="HoaDon" ToRole="BenhNhan" />
+    <NavigationProperty Name="DichVu1" Relationship="Self.FK_HoaDon_DichVu" FromRole="HoaDon" ToRole="DichVu" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK__HoaDon__NguoiLap__5629CD9C" FromRole="HoaDon" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="MaKhoa" />
+    </Key>
+    <Property Name="MaKhoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoBN" Type="Int32" />
+    <Property Name="SoPhong" Type="Int32" />
+    <NavigationProperty Name="BacSis" Relationship="Self.FK__BacSi__Khoa__4CA06362" FromRole="Khoa" ToRole="BacSi" />
+    <NavigationProperty Name="BenhNhans" Relationship="Self.FK_BenhNhan_Khoa" FromRole="Khoa" ToRole="BenhNhan" />
+    <NavigationProperty Name="PhieuNhapViens" Relationship="Self.FK__PhieuNhapV__Khoa__5BE2A6F2" FromRole="Khoa" ToRole="PhieuNhapVien" />
+    <NavigationProperty Name="PhieuXuatViens" Relationship="Self.FK__PhieuXuatV__Khoa__5EBF139D" FromRole="Khoa" ToRole="PhieuXuatVien" />
+    <NavigationProperty Name="Phongs" Relationship="Self.FK__Phong__Khoa__5FB337D6" FromRole="Khoa" ToRole="Phong" />
+    <NavigationProperty Name="Phongs1" Relationship="Self.FK__Phong__Khoa__60A75C0F" FromRole="Khoa" ToRole="Phong" />
+    <NavigationProperty Name="Phongs2" Relationship="Self.FK__Phong__Khoa__619B8048" FromRole="Khoa" ToRole="Phong" />
+    <NavigationProperty Name="Phongs3" Relationship="Self.FK__Phong__Khoa__628FA481" FromRole="Khoa" ToRole="Phong" />
+    <NavigationProperty Name="Phongs4" Relationship="Self.FK__Phong__Khoa__6383C8BA" FromRole="Khoa" ToRole="Phong" />
+    <NavigationProperty Name="Phongs5" Relationship="Self.FK__Phong__Khoa__6477ECF3" FromRole="Khoa" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenNV" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Luong" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Nhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__NguoiLap__5629CD9C" FromRole="NhanVien" ToRole="HoaDon" />
+    <NavigationProperty Name="NhomDoiTuong" Relationship="Self.FK__NhanVien__Nhom__5812160E" FromRole="NhanVien" ToRole="NhomDoiTuong" />
+    <NavigationProperty Name="PhieuNhapViens" Relationship="Self.FK__PhieuNhap__Nguoi__5AEE82B9" FromRole="NhanVien" ToRole="PhieuNhapVien" />
+  </EntityType>
+  <EntityType Name="NhomDoiTuong">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenNhom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BacSis" Relationship="Self.FK__BacSi__Nhom__4D94879B" FromRole="NhomDoiTuong" ToRole="BacSi" />
+    <NavigationProperty Name="BenhNhans" Relationship="Self.FK_BenhNhan_NhomDoiTuong" FromRole="NhomDoiTuong" ToRole="BenhNhan" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK__NhanVien__Nhom__5812160E" FromRole="NhomDoiTuong" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="PhieuDieuTri">
+    <Key>
+      <PropertyRef Name="MaPDT" />
+    </Key>
+    <Property Name="MaPDT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgayThang" Type="DateTime" Precision="0" />
+    <Property Name="TinhTrang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NguoiLap" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="BenhNhan1" Relationship="Self.FK_PhieuDieuTri_BenhNhan" FromRole="PhieuDieuTri" ToRole="BenhNhan" />
+  </EntityType>
+  <EntityType Name="PhieuNhapVien">
+    <Key>
+      <PropertyRef Name="MaPNV" />
+    </Key>
+    <Property Name="MaPNV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TgNV" Type="DateTime" Precision="0" />
+    <Property Name="NgapLap" Type="DateTime" Precision="0" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NguoiLap" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="BenhNhan1" Relationship="Self.FK__PhieuNhap__BenhN__59FA5E80" FromRole="PhieuNhapVien" ToRole="BenhNhan" />
+    <NavigationProperty Name="Khoa1" Relationship="Self.FK__PhieuNhapV__Khoa__5BE2A6F2" FromRole="PhieuNhapVien" ToRole="Khoa" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK__PhieuNhap__Nguoi__5AEE82B9" FromRole="PhieuNhapVien" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="PhieuXetNghiem">
+    <Key>
+      <PropertyRef Name="MaPXN" />
+    </Key>
+    <Property Name="MaPXN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenLoaiXN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayXN" Type="DateTime" Precision="0" />
+    <Property Name="KetQua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="BenhNhan1" Relationship="Self.FK__PhieuXetN__BenhN__5CD6CB2B" FromRole="PhieuXetNghiem" ToRole="BenhNhan" />
+  </EntityType>
+  <EntityType Name="PhieuXuatVien">
+    <Key>
+      <PropertyRef Name="MaPXV" />
+    </Key>
+    <Property Name="MaPXV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="0" />
+    <Property Name="TgDieuTri" Type="DateTime" Precision="0" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="NguoiLap" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BenhNhan1" Relationship="Self.FK__PhieuXuat__BenhN__5DCAEF64" FromRole="PhieuXuatVien" ToRole="BenhNhan" />
+    <NavigationProperty Name="Khoa1" Relationship="Self.FK__PhieuXuatV__Khoa__5EBF139D" FromRole="PhieuXuatVien" ToRole="Khoa" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SoGiuong" Type="Int32" />
+    <NavigationProperty Name="Giuongs" Relationship="Self.FK_Giuong_Phong" FromRole="Phong" ToRole="Giuong" />
+    <NavigationProperty Name="Khoa1" Relationship="Self.FK__Phong__Khoa__5FB337D6" FromRole="Phong" ToRole="Khoa" />
+    <NavigationProperty Name="Khoa2" Relationship="Self.FK__Phong__Khoa__60A75C0F" FromRole="Phong" ToRole="Khoa" />
+    <NavigationProperty Name="Khoa3" Relationship="Self.FK__Phong__Khoa__619B8048" FromRole="Phong" ToRole="Khoa" />
+    <NavigationProperty Name="Khoa4" Relationship="Self.FK__Phong__Khoa__628FA481" FromRole="Phong" ToRole="Khoa" />
+    <NavigationProperty Name="Khoa5" Relationship="Self.FK__Phong__Khoa__6383C8BA" FromRole="Phong" ToRole="Khoa" />
+    <NavigationProperty Name="Khoa6" Relationship="Self.FK__Phong__Khoa__6477ECF3" FromRole="Phong" ToRole="Khoa" />
+  </EntityType>
+  <EntityType Name="Thuoc">
+    <Key>
+      <PropertyRef Name="MaThuoc" />
+    </Key>
+    <Property Name="MaThuoc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenThuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TacDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SL" Type="Int32" />
+    <NavigationProperty Name="DonThuocs" Relationship="Self.FK__DonThuoc__MaThuo__534D60F1" FromRole="Thuoc" ToRole="DonThuoc" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UsersName" />
+    </Key>
+    <Property Name="UsersName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="v_Current_BenhNhan">
+    <Key>
+      <PropertyRef Name="MaBenhNhan" />
+      <PropertyRef Name="Khoa" />
+      <PropertyRef Name="Nhom" />
+      <PropertyRef Name="SDT" />
+      <PropertyRef Name="NgaySinh" />
+    </Key>
+    <Property Name="MaBenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoBN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenBN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BacSi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="v_Deleted_BenhNhan">
+    <Key>
+      <PropertyRef Name="MaBenhNhan" />
+      <PropertyRef Name="Khoa" />
+      <PropertyRef Name="Nhom" />
+      <PropertyRef Name="SDT" />
+      <PropertyRef Name="NgaySinh" />
+    </Key>
+    <Property Name="MaBenhNhan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoBN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenBN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BacSi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK__BacSi__Khoa__4CA06362">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="BacSi">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BacSi__Nhom__4D94879B">
+    <End Role="NhomDoiTuong" Type="Self.NhomDoiTuong" Multiplicity="0..1" />
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomDoiTuong">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="BacSi">
+        <PropertyRef Name="Nhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan_BacSi">
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BacSi">
+        <PropertyRef Name="MaBS" />
+      </Principal>
+      <Dependent Role="BenhNhan">
+        <PropertyRef Name="BacSi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BenhAn__BenhNhan__4E88ABD4">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="BenhAn" Type="Self.BenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="BenhAn">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BenhAn__BenhNhan__4F7CD00D">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="BenhAn" Type="Self.BenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="BenhAn">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__BenhNhan__5535A963">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuNhap__BenhN__59FA5E80">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuNhapVien" Type="Self.PhieuNhapVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuNhapVien">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXetN__BenhN__5CD6CB2B">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuXetNghiem" Type="Self.PhieuXetNghiem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuXetNghiem">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXuat__BenhN__5DCAEF64">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuXuatVien" Type="Self.PhieuXuatVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuXuatVien">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan_Khoa">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="BenhNhan">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan_NhomDoiTuong">
+    <End Role="NhomDoiTuong" Type="Self.NhomDoiTuong" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomDoiTuong">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="BenhNhan">
+        <PropertyRef Name="Nhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuDieuTri_BenhNhan">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuDieuTri" Type="Self.PhieuDieuTri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuDieuTri">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_DichVu">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="DichVu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonThuoc__MaThuo__534D60F1">
+    <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="1" />
+    <End Role="DonThuoc" Type="Self.DonThuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thuoc">
+        <PropertyRef Name="MaThuoc" />
+      </Principal>
+      <Dependent Role="DonThuoc">
+        <PropertyRef Name="MaThuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Giuong_Phong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Giuong" Type="Self.Giuong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="Giuong">
+        <PropertyRef Name="Phong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__NguoiLap__5629CD9C">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="NguoiLap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuNhapV__Khoa__5BE2A6F2">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="PhieuNhapVien" Type="Self.PhieuNhapVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="PhieuNhapVien">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXuatV__Khoa__5EBF139D">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="PhieuXuatVien" Type="Self.PhieuXuatVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="PhieuXuatVien">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__5FB337D6">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__60A75C0F">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__619B8048">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__628FA481">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__6383C8BA">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__6477ECF3">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NhanVien__Nhom__5812160E">
+    <End Role="NhomDoiTuong" Type="Self.NhomDoiTuong" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomDoiTuong">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="Nhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuNhap__Nguoi__5AEE82B9">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="PhieuNhapVien" Type="Self.PhieuNhapVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="PhieuNhapVien">
+        <PropertyRef Name="NguoiLap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="qlpk1Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BacSis" EntityType="Self.BacSi" />
+    <EntitySet Name="BenhAns" EntityType="Self.BenhAn" />
+    <EntitySet Name="BenhNhans" EntityType="Self.BenhNhan" />
+    <EntitySet Name="DichVus" EntityType="Self.DichVu" />
+    <EntitySet Name="DonThuocs" EntityType="Self.DonThuoc" />
+    <EntitySet Name="Giuongs" EntityType="Self.Giuong" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="Khoas" EntityType="Self.Khoa" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="NhomDoiTuongs" EntityType="Self.NhomDoiTuong" />
+    <EntitySet Name="PhieuDieuTris" EntityType="Self.PhieuDieuTri" />
+    <EntitySet Name="PhieuNhapViens" EntityType="Self.PhieuNhapVien" />
+    <EntitySet Name="PhieuXetNghiems" EntityType="Self.PhieuXetNghiem" />
+    <EntitySet Name="PhieuXuatViens" EntityType="Self.PhieuXuatVien" />
+    <EntitySet Name="Phongs" EntityType="Self.Phong" />
+    <EntitySet Name="Thuocs" EntityType="Self.Thuoc" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="v_Current_BenhNhan" EntityType="Self.v_Current_BenhNhan" />
+    <EntitySet Name="v_Deleted_BenhNhan" EntityType="Self.v_Deleted_BenhNhan" />
+    <AssociationSet Name="FK__BacSi__Khoa__4CA06362" Association="Self.FK__BacSi__Khoa__4CA06362">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="BacSi" EntitySet="BacSis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BacSi__Nhom__4D94879B" Association="Self.FK__BacSi__Nhom__4D94879B">
+      <End Role="NhomDoiTuong" EntitySet="NhomDoiTuongs" />
+      <End Role="BacSi" EntitySet="BacSis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan_BacSi" Association="Self.FK_BenhNhan_BacSi">
+      <End Role="BacSi" EntitySet="BacSis" />
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BenhAn__BenhNhan__4E88ABD4" Association="Self.FK__BenhAn__BenhNhan__4E88ABD4">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="BenhAn" EntitySet="BenhAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BenhAn__BenhNhan__4F7CD00D" Association="Self.FK__BenhAn__BenhNhan__4F7CD00D">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="BenhAn" EntitySet="BenhAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__BenhNhan__5535A963" Association="Self.FK__HoaDon__BenhNhan__5535A963">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuNhap__BenhN__59FA5E80" Association="Self.FK__PhieuNhap__BenhN__59FA5E80">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="PhieuNhapVien" EntitySet="PhieuNhapViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXetN__BenhN__5CD6CB2B" Association="Self.FK__PhieuXetN__BenhN__5CD6CB2B">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="PhieuXetNghiem" EntitySet="PhieuXetNghiems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXuat__BenhN__5DCAEF64" Association="Self.FK__PhieuXuat__BenhN__5DCAEF64">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="PhieuXuatVien" EntitySet="PhieuXuatViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan_Khoa" Association="Self.FK_BenhNhan_Khoa">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan_NhomDoiTuong" Association="Self.FK_BenhNhan_NhomDoiTuong">
+      <End Role="NhomDoiTuong" EntitySet="NhomDoiTuongs" />
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuDieuTri_BenhNhan" Association="Self.FK_PhieuDieuTri_BenhNhan">
+      <End Role="BenhNhan" EntitySet="BenhNhans" />
+      <End Role="PhieuDieuTri" EntitySet="PhieuDieuTris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_DichVu" Association="Self.FK_HoaDon_DichVu">
+      <End Role="DichVu" EntitySet="DichVus" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonThuoc__MaThuo__534D60F1" Association="Self.FK__DonThuoc__MaThuo__534D60F1">
+      <End Role="Thuoc" EntitySet="Thuocs" />
+      <End Role="DonThuoc" EntitySet="DonThuocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Giuong_Phong" Association="Self.FK_Giuong_Phong">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="Giuong" EntitySet="Giuongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__NguoiLap__5629CD9C" Association="Self.FK__HoaDon__NguoiLap__5629CD9C">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuNhapV__Khoa__5BE2A6F2" Association="Self.FK__PhieuNhapV__Khoa__5BE2A6F2">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="PhieuNhapVien" EntitySet="PhieuNhapViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXuatV__Khoa__5EBF139D" Association="Self.FK__PhieuXuatV__Khoa__5EBF139D">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="PhieuXuatVien" EntitySet="PhieuXuatViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__5FB337D6" Association="Self.FK__Phong__Khoa__5FB337D6">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__60A75C0F" Association="Self.FK__Phong__Khoa__60A75C0F">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__619B8048" Association="Self.FK__Phong__Khoa__619B8048">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__628FA481" Association="Self.FK__Phong__Khoa__628FA481">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__6383C8BA" Association="Self.FK__Phong__Khoa__6383C8BA">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__6477ECF3" Association="Self.FK__Phong__Khoa__6477ECF3">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NhanVien__Nhom__5812160E" Association="Self.FK__NhanVien__Nhom__5812160E">
+      <End Role="NhomDoiTuong" EntitySet="NhomDoiTuongs" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuNhap__Nguoi__5AEE82B9" Association="Self.FK__PhieuNhap__Nguoi__5AEE82B9">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="PhieuNhapVien" EntitySet="PhieuNhapViens" />
+    </AssociationSet>
+    <FunctionImport Name="usp__Delete__BenhAn">
+      <Parameter Name="maBA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__DT">
+      <Parameter Name="madt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__DV">
+      <Parameter Name="madv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__Phong">
+      <Parameter Name="map" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__PNV">
+      <Parameter Name="mapnv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__PXN">
+      <Parameter Name="mapxn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__PXV">
+      <Parameter Name="mapxv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Delete__Thuoc">
+      <Parameter Name="mat" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__BenhAn">
+      <Parameter Name="maBA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__DT">
+      <Parameter Name="madt" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+      <Parameter Name="hd" Mode="In" Type="String" />
+      <Parameter Name="mt" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__DV">
+      <Parameter Name="madv" Mode="In" Type="String" />
+      <Parameter Name="tdv" Mode="In" Type="String" />
+      <Parameter Name="dvt" Mode="In" Type="String" />
+      <Parameter Name="dg" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__Phong">
+      <Parameter Name="map" Mode="In" Type="String" />
+      <Parameter Name="tp" Mode="In" Type="String" />
+      <Parameter Name="k" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__PNV">
+      <Parameter Name="mapnv" Mode="In" Type="String" />
+      <Parameter Name="tgnv" Mode="In" Type="DateTime" />
+      <Parameter Name="nl" Mode="In" Type="DateTime" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+      <Parameter Name="ngl" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__PXN">
+      <Parameter Name="mapxn" Mode="In" Type="String" />
+      <Parameter Name="tlxn" Mode="In" Type="String" />
+      <Parameter Name="nxn" Mode="In" Type="DateTime" />
+      <Parameter Name="kq" Mode="In" Type="String" />
+      <Parameter Name="gc" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__PXV">
+      <Parameter Name="mapxv" Mode="In" Type="String" />
+      <Parameter Name="tgdt" Mode="In" Type="DateTime" />
+      <Parameter Name="nl" Mode="In" Type="DateTime" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Insert__Thuoc">
+      <Parameter Name="mat" Mode="In" Type="String" />
+      <Parameter Name="tenth" Mode="In" Type="String" />
+      <Parameter Name="td" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Decimal" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__DT">
+      <Parameter Name="madt" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+      <Parameter Name="hd" Mode="In" Type="String" />
+      <Parameter Name="mt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__DV">
+      <Parameter Name="madv" Mode="In" Type="String" />
+      <Parameter Name="tdv" Mode="In" Type="String" />
+      <Parameter Name="dvt" Mode="In" Type="String" />
+      <Parameter Name="dg" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__Phong">
+      <Parameter Name="map" Mode="In" Type="String" />
+      <Parameter Name="tp" Mode="In" Type="String" />
+      <Parameter Name="k" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__PNV">
+      <Parameter Name="mapnv" Mode="In" Type="String" />
+      <Parameter Name="tgnv" Mode="In" Type="DateTime" />
+      <Parameter Name="nl" Mode="In" Type="DateTime" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+      <Parameter Name="ngl" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__PXN">
+      <Parameter Name="mapxn" Mode="In" Type="String" />
+      <Parameter Name="tlxn" Mode="In" Type="String" />
+      <Parameter Name="nxn" Mode="In" Type="DateTime" />
+      <Parameter Name="kq" Mode="In" Type="String" />
+      <Parameter Name="gc" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__PXV">
+      <Parameter Name="mapxv" Mode="In" Type="String" />
+      <Parameter Name="tgdt" Mode="In" Type="DateTime" />
+      <Parameter Name="nl" Mode="In" Type="DateTime" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp__Update__Thuoc">
+      <Parameter Name="mat" Mode="In" Type="String" />
+      <Parameter Name="tenth" Mode="In" Type="String" />
+      <Parameter Name="td" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Decimal" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Delete_BacSi">
+      <Parameter Name="mabs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Delete_BenhNhan">
+      <Parameter Name="mabn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_delete_DT">
+      <Parameter Name="mdt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Delete_HD">
+      <Parameter Name="mhd" Mode="In" Type="String" />
+      <Parameter Name="dv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Delete_Khoa">
+      <Parameter Name="mak" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Delete_NhanVien">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_BacSi">
+      <Parameter Name="mabs" Mode="In" Type="String" />
+      <Parameter Name="hbs" Mode="In" Type="String" />
+      <Parameter Name="tbs" Mode="In" Type="String" />
+      <Parameter Name="dc" Mode="In" Type="String" />
+      <Parameter Name="ns" Mode="In" Type="DateTime" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="nhom" Mode="In" Type="String" />
+      <Parameter Name="luong" Mode="In" Type="Decimal" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_BenhNhan">
+      <Parameter Name="mabn" Mode="In" Type="String" />
+      <Parameter Name="hbn" Mode="In" Type="String" />
+      <Parameter Name="tbn" Mode="In" Type="String" />
+      <Parameter Name="dc" Mode="In" Type="String" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+      <Parameter Name="nhom" Mode="In" Type="String" />
+      <Parameter Name="bs" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="Int32" />
+      <Parameter Name="ns" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insert_DT">
+      <Parameter Name="mdt" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+      <Parameter Name="hd" Mode="In" Type="String" />
+      <Parameter Name="mt" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_HD">
+      <Parameter Name="mhd" Mode="In" Type="String" />
+      <Parameter Name="nl" Mode="In" Type="DateTime" />
+      <Parameter Name="ngl" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+      <Parameter Name="nk" Mode="In" Type="DateTime" />
+      <Parameter Name="dv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_Khoa">
+      <Parameter Name="mak" Mode="In" Type="String" />
+      <Parameter Name="tk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_NhanVien">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="hnv" Mode="In" Type="String" />
+      <Parameter Name="tnv" Mode="In" Type="String" />
+      <Parameter Name="ns" Mode="In" Type="DateTime" />
+      <Parameter Name="dc" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="luong" Mode="In" Type="Decimal" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="nhom" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Insert_Nhom">
+      <Parameter Name="manhom" Mode="In" Type="String" />
+      <Parameter Name="tn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Restore_BenhNhan">
+      <Parameter Name="ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Select_BacSi" ReturnType="Collection(qlpk1Model.usp_Select_BacSi_Result)" />
+    <FunctionImport Name="usp_Select_NhanVien" ReturnType="Collection(qlpk1Model.usp_Select_NhanVien_Result)" />
+    <FunctionImport Name="usp_Select_Nhom" ReturnType="Collection(qlpk1Model.usp_Select_Nhom_Result)" />
+    <FunctionImport Name="usp_Update_BacSi">
+      <Parameter Name="mabs" Mode="In" Type="String" />
+      <Parameter Name="hbs" Mode="In" Type="String" />
+      <Parameter Name="tbs" Mode="In" Type="String" />
+      <Parameter Name="dc" Mode="In" Type="String" />
+      <Parameter Name="ns" Mode="In" Type="DateTime" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="nhom" Mode="In" Type="String" />
+      <Parameter Name="luong" Mode="In" Type="Decimal" />
+      <Parameter Name="khoa" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_update_DT">
+      <Parameter Name="mdt" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+      <Parameter Name="hd" Mode="In" Type="String" />
+      <Parameter Name="mt" Mode="In" Type="String" />
+      <Parameter Name="bn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Update_Khoa">
+      <Parameter Name="mak" Mode="In" Type="String" />
+      <Parameter Name="tk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Update_NhanVien">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="hnv" Mode="In" Type="String" />
+      <Parameter Name="tnv" Mode="In" Type="String" />
+      <Parameter Name="ns" Mode="In" Type="DateTime" />
+      <Parameter Name="dc" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="luong" Mode="In" Type="Decimal" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="nhom" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Update_Nhom">
+      <Parameter Name="manhom" Mode="In" Type="String" />
+      <Parameter Name="tn" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="usp_Select_BacSi_Result">
+    <Property Type="String" Name="MaBS" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="HoBS" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TenBS" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" Precision="16" />
+    <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Nhom" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="Luong" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Khoa" Nullable="true" MaxLength="30" />
+    <Property Type="Boolean" Name="Deleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_Select_NhanVien_Result">
+    <Property Type="String" Name="MaNV" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="HoNV" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TenNV" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" Precision="16" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="11" />
+    <Property Type="Decimal" Name="Luong" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Nhom" Nullable="true" MaxLength="30" />
+    <Property Type="Boolean" Name="GioiTinh" Nullable="false" />
+    <Property Type="Boolean" Name="Deleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_Select_Nhom_Result">
+    <Property Type="String" Name="MaNhom" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="TenNhom" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

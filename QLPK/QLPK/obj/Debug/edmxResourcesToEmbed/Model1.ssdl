@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="qlpk1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BacSi">
+    <Key>
+      <PropertyRef Name="MaBS" />
+    </Key>
+    <Property Name="MaBS" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HoBS" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenBS" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="SDT" Type="varchar" MaxLength="11" />
+    <Property Name="Nhom" Type="varchar" MaxLength="30" />
+    <Property Name="Luong" Type="money" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BenhAn">
+    <Key>
+      <PropertyRef Name="MaBA" />
+    </Key>
+    <Property Name="MaBA" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NgayLap" Type="smalldatetime" />
+    <Property Name="KqDieuTri" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoiDungKham" Type="nvarchar" MaxLength="50" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhLy" Type="nvarchar" MaxLength="50" />
+    <Property Name="HuongDieuTri" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BenhNhan">
+    <Key>
+      <PropertyRef Name="MaBenhNhan" />
+    </Key>
+    <Property Name="MaBenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HoBN" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenBN" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nhom" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BacSi" Type="varchar" MaxLength="30" />
+    <Property Name="SDT" Type="int" Nullable="false" />
+    <Property Name="NgaySinh" Type="smalldatetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="DichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenDV" Type="nvarchar" MaxLength="255" />
+    <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="DonGia" Type="money" />
+  </EntityType>
+  <EntityType Name="DonThuoc">
+    <Key>
+      <PropertyRef Name="MaDT" />
+      <PropertyRef Name="MaThuoc" />
+    </Key>
+    <Property Name="MaDT" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="HuongDan" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaThuoc" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Giuong">
+    <Key>
+      <PropertyRef Name="MaGiuong" />
+    </Key>
+    <Property Name="MaGiuong" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="STT" Type="varchar" MaxLength="5" />
+    <Property Name="Phong" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="DichVu" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DichVu" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NgayLap" Type="smalldatetime" />
+    <Property Name="NguoiLap" Type="varchar" MaxLength="30" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" />
+    <Property Name="NgayKham" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="MaKhoa" />
+    </Key>
+    <Property Name="MaKhoa" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenKhoa" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoBN" Type="int" />
+    <Property Name="SoPhong" Type="int" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HoNV" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="30" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="varchar" MaxLength="11" />
+    <Property Name="Luong" Type="money" />
+    <Property Name="Nhom" Type="varchar" MaxLength="30" />
+    <Property Name="GioiTinh" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="NhomDoiTuong">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenNhom" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PhieuDieuTri">
+    <Key>
+      <PropertyRef Name="MaPDT" />
+    </Key>
+    <Property Name="MaPDT" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NgayThang" Type="smalldatetime" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NgayLap" Type="smalldatetime" Nullable="false" />
+    <Property Name="NguoiLap" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhieuNhapVien">
+    <Key>
+      <PropertyRef Name="MaPNV" />
+    </Key>
+    <Property Name="MaPNV" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TgNV" Type="smalldatetime" />
+    <Property Name="NgapLap" Type="smalldatetime" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" />
+    <Property Name="NguoiLap" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PhieuXetNghiem">
+    <Key>
+      <PropertyRef Name="MaPXN" />
+    </Key>
+    <Property Name="MaPXN" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenLoaiXN" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayXN" Type="smalldatetime" />
+    <Property Name="KetQua" Type="nvarchar" MaxLength="50" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PhieuXuatVien">
+    <Key>
+      <PropertyRef Name="MaPXV" />
+    </Key>
+    <Property Name="MaPXV" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NgayLap" Type="smalldatetime" />
+    <Property Name="TgDieuTri" Type="smalldatetime" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" />
+    <Property Name="BenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="NguoiLap" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenPhong" Type="nvarchar" MaxLength="50" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" />
+    <Property Name="SoGiuong" Type="int" />
+  </EntityType>
+  <EntityType Name="Thuoc">
+    <Key>
+      <PropertyRef Name="MaThuoc" />
+    </Key>
+    <Property Name="MaThuoc" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenThuoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="TacDung" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gia" Type="money" />
+    <Property Name="SL" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UsersName" />
+    </Key>
+    <Property Name="UsersName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PassWord" Type="varchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Role" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'qlpk1.dbo.v_Current_BenhNhan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_Current_BenhNhan">
+    <Key>
+      <PropertyRef Name="MaBenhNhan" />
+      <PropertyRef Name="Khoa" />
+      <PropertyRef Name="Nhom" />
+      <PropertyRef Name="SDT" />
+      <PropertyRef Name="NgaySinh" />
+    </Key>
+    <Property Name="MaBenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HoBN" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenBN" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nhom" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BacSi" Type="varchar" MaxLength="30" />
+    <Property Name="SDT" Type="int" Nullable="false" />
+    <Property Name="NgaySinh" Type="smalldatetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'qlpk1.dbo.v_Deleted_BenhNhan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_Deleted_BenhNhan">
+    <Key>
+      <PropertyRef Name="MaBenhNhan" />
+      <PropertyRef Name="Khoa" />
+      <PropertyRef Name="Nhom" />
+      <PropertyRef Name="SDT" />
+      <PropertyRef Name="NgaySinh" />
+    </Key>
+    <Property Name="MaBenhNhan" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HoBN" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenBN" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="Khoa" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nhom" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BacSi" Type="varchar" MaxLength="30" />
+    <Property Name="SDT" Type="int" Nullable="false" />
+    <Property Name="NgaySinh" Type="smalldatetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <Association Name="FK__BacSi__Khoa__4CA06362">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="BacSi">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BacSi__Nhom__4D94879B">
+    <End Role="NhomDoiTuong" Type="Self.NhomDoiTuong" Multiplicity="0..1" />
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomDoiTuong">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="BacSi">
+        <PropertyRef Name="Nhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BenhAn__BenhNhan__4E88ABD4">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="BenhAn" Type="Self.BenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="BenhAn">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BenhAn__BenhNhan__4F7CD00D">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="BenhAn" Type="Self.BenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="BenhAn">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonThuoc__MaThuo__534D60F1">
+    <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="1" />
+    <End Role="DonThuoc" Type="Self.DonThuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thuoc">
+        <PropertyRef Name="MaThuoc" />
+      </Principal>
+      <Dependent Role="DonThuoc">
+        <PropertyRef Name="MaThuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__BenhNhan__5535A963">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__NguoiLap__5629CD9C">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="NguoiLap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NhanVien__Nhom__5812160E">
+    <End Role="NhomDoiTuong" Type="Self.NhomDoiTuong" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomDoiTuong">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="Nhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuNhap__BenhN__59FA5E80">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuNhapVien" Type="Self.PhieuNhapVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuNhapVien">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuNhap__Nguoi__5AEE82B9">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="PhieuNhapVien" Type="Self.PhieuNhapVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="PhieuNhapVien">
+        <PropertyRef Name="NguoiLap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuNhapV__Khoa__5BE2A6F2">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="PhieuNhapVien" Type="Self.PhieuNhapVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="PhieuNhapVien">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXetN__BenhN__5CD6CB2B">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuXetNghiem" Type="Self.PhieuXetNghiem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuXetNghiem">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXuat__BenhN__5DCAEF64">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuXuatVien" Type="Self.PhieuXuatVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuXuatVien">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXuatV__Khoa__5EBF139D">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="PhieuXuatVien" Type="Self.PhieuXuatVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="PhieuXuatVien">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__5FB337D6">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__60A75C0F">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__619B8048">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__628FA481">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__6383C8BA">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phong__Khoa__6477ECF3">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan_BacSi">
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BacSi">
+        <PropertyRef Name="MaBS" />
+      </Principal>
+      <Dependent Role="BenhNhan">
+        <PropertyRef Name="BacSi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan_Khoa">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="BenhNhan">
+        <PropertyRef Name="Khoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan_NhomDoiTuong">
+    <End Role="NhomDoiTuong" Type="Self.NhomDoiTuong" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomDoiTuong">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="BenhNhan">
+        <PropertyRef Name="Nhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Giuong_Phong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Giuong" Type="Self.Giuong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="Giuong">
+        <PropertyRef Name="Phong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_DichVu">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="DichVu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuDieuTri_BenhNhan">
+    <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1" />
+    <End Role="PhieuDieuTri" Type="Self.PhieuDieuTri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenhNhan">
+        <PropertyRef Name="MaBenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuDieuTri">
+        <PropertyRef Name="BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fnc_TongTien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="money">
+    <Parameter Name="mabn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__BenhAn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maBA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__DT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__DV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__Phong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="map" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__PNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapnv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__PXN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapxn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__PXV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapxv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Delete__Thuoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mat" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__BenhAn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maBA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__DT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+    <Parameter Name="hd" Type="nvarchar" Mode="In" />
+    <Parameter Name="mt" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__DV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madv" Type="varchar" Mode="In" />
+    <Parameter Name="tdv" Type="nvarchar" Mode="In" />
+    <Parameter Name="dvt" Type="nvarchar" Mode="In" />
+    <Parameter Name="dg" Type="money" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__Phong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="map" Type="varchar" Mode="In" />
+    <Parameter Name="tp" Type="nvarchar" Mode="In" />
+    <Parameter Name="k" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__PNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapnv" Type="varchar" Mode="In" />
+    <Parameter Name="tgnv" Type="smalldatetime" Mode="In" />
+    <Parameter Name="nl" Type="smalldatetime" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+    <Parameter Name="ngl" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__PXN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapxn" Type="varchar" Mode="In" />
+    <Parameter Name="tlxn" Type="nvarchar" Mode="In" />
+    <Parameter Name="nxn" Type="smalldatetime" Mode="In" />
+    <Parameter Name="kq" Type="nvarchar" Mode="In" />
+    <Parameter Name="gc" Type="nvarchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__PXV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapxv" Type="varchar" Mode="In" />
+    <Parameter Name="tgdt" Type="smalldatetime" Mode="In" />
+    <Parameter Name="nl" Type="smalldatetime" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Insert__Thuoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mat" Type="varchar" Mode="In" />
+    <Parameter Name="tenth" Type="nvarchar" Mode="In" />
+    <Parameter Name="td" Type="nvarchar" Mode="In" />
+    <Parameter Name="gia" Type="money" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__DT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+    <Parameter Name="hd" Type="nvarchar" Mode="In" />
+    <Parameter Name="mt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__DV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madv" Type="varchar" Mode="In" />
+    <Parameter Name="tdv" Type="nvarchar" Mode="In" />
+    <Parameter Name="dvt" Type="nvarchar" Mode="In" />
+    <Parameter Name="dg" Type="money" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__Phong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="map" Type="varchar" Mode="In" />
+    <Parameter Name="tp" Type="nvarchar" Mode="In" />
+    <Parameter Name="k" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__PNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapnv" Type="varchar" Mode="In" />
+    <Parameter Name="tgnv" Type="smalldatetime" Mode="In" />
+    <Parameter Name="nl" Type="smalldatetime" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+    <Parameter Name="ngl" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__PXN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapxn" Type="varchar" Mode="In" />
+    <Parameter Name="tlxn" Type="nvarchar" Mode="In" />
+    <Parameter Name="nxn" Type="smalldatetime" Mode="In" />
+    <Parameter Name="kq" Type="nvarchar" Mode="In" />
+    <Parameter Name="gc" Type="nvarchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__PXV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mapxv" Type="varchar" Mode="In" />
+    <Parameter Name="tgdt" Type="smalldatetime" Mode="In" />
+    <Parameter Name="nl" Type="smalldatetime" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp__Update__Thuoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mat" Type="varchar" Mode="In" />
+    <Parameter Name="tenth" Type="nvarchar" Mode="In" />
+    <Parameter Name="td" Type="nvarchar" Mode="In" />
+    <Parameter Name="gia" Type="money" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_Delete_BacSi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mabs" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Delete_BenhNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mabn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_delete_DT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mdt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Delete_HD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mhd" Type="varchar" Mode="In" />
+    <Parameter Name="dv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Delete_Khoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mak" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Delete_NhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Insert_BacSi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mabs" Type="varchar" Mode="In" />
+    <Parameter Name="hbs" Type="nvarchar" Mode="In" />
+    <Parameter Name="tbs" Type="nvarchar" Mode="In" />
+    <Parameter Name="dc" Type="nvarchar" Mode="In" />
+    <Parameter Name="ns" Type="smalldatetime" Mode="In" />
+    <Parameter Name="gt" Type="bit" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="nhom" Type="varchar" Mode="In" />
+    <Parameter Name="luong" Type="money" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Insert_BenhNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mabn" Type="varchar" Mode="In" />
+    <Parameter Name="hbn" Type="nvarchar" Mode="In" />
+    <Parameter Name="tbn" Type="nvarchar" Mode="In" />
+    <Parameter Name="dc" Type="nvarchar" Mode="In" />
+    <Parameter Name="gt" Type="bit" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+    <Parameter Name="nhom" Type="varchar" Mode="In" />
+    <Parameter Name="bs" Type="varchar" Mode="In" />
+    <Parameter Name="sdt" Type="int" Mode="In" />
+    <Parameter Name="ns" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="usp_insert_DT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mdt" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+    <Parameter Name="hd" Type="nvarchar" Mode="In" />
+    <Parameter Name="mt" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Insert_HD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mhd" Type="varchar" Mode="In" />
+    <Parameter Name="nl" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ngl" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+    <Parameter Name="nk" Type="smalldatetime" Mode="In" />
+    <Parameter Name="dv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Insert_Khoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mak" Type="varchar" Mode="In" />
+    <Parameter Name="tk" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Insert_NhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="hnv" Type="nvarchar" Mode="In" />
+    <Parameter Name="tnv" Type="nvarchar" Mode="In" />
+    <Parameter Name="ns" Type="smalldatetime" Mode="In" />
+    <Parameter Name="dc" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="luong" Type="money" Mode="In" />
+    <Parameter Name="gt" Type="bit" Mode="In" />
+    <Parameter Name="nhom" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Insert_Nhom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manhom" Type="varchar" Mode="In" />
+    <Parameter Name="tn" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Restore_BenhNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Select_BacSi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_Select_NhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_Select_Nhom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_Update_BacSi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mabs" Type="varchar" Mode="In" />
+    <Parameter Name="hbs" Type="nvarchar" Mode="In" />
+    <Parameter Name="tbs" Type="nvarchar" Mode="In" />
+    <Parameter Name="dc" Type="nvarchar" Mode="In" />
+    <Parameter Name="ns" Type="smalldatetime" Mode="In" />
+    <Parameter Name="gt" Type="bit" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="nhom" Type="varchar" Mode="In" />
+    <Parameter Name="luong" Type="money" Mode="In" />
+    <Parameter Name="khoa" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_update_DT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mdt" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+    <Parameter Name="hd" Type="nvarchar" Mode="In" />
+    <Parameter Name="mt" Type="varchar" Mode="In" />
+    <Parameter Name="bn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Update_Khoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mak" Type="varchar" Mode="In" />
+    <Parameter Name="tk" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Update_NhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="hnv" Type="nvarchar" Mode="In" />
+    <Parameter Name="tnv" Type="nvarchar" Mode="In" />
+    <Parameter Name="ns" Type="smalldatetime" Mode="In" />
+    <Parameter Name="dc" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="luong" Type="money" Mode="In" />
+    <Parameter Name="gt" Type="bit" Mode="In" />
+    <Parameter Name="nhom" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_Update_Nhom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manhom" Type="varchar" Mode="In" />
+    <Parameter Name="tn" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="qlpk1ModelStoreContainer">
+    <EntitySet Name="BacSi" EntityType="Self.BacSi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenhAn" EntityType="Self.BenhAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenhNhan" EntityType="Self.BenhNhan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DichVu" EntityType="Self.DichVu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonThuoc" EntityType="Self.DonThuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giuong" EntityType="Self.Giuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhomDoiTuong" EntityType="Self.NhomDoiTuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuDieuTri" EntityType="Self.PhieuDieuTri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuNhapVien" EntityType="Self.PhieuNhapVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuXetNghiem" EntityType="Self.PhieuXetNghiem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuXuatVien" EntityType="Self.PhieuXuatVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="v_Current_BenhNhan" EntityType="Self.v_Current_BenhNhan" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_Current_BenhNhan].[MaBenhNhan] AS [MaBenhNhan], 
+    [v_Current_BenhNhan].[HoBN] AS [HoBN], 
+    [v_Current_BenhNhan].[TenBN] AS [TenBN], 
+    [v_Current_BenhNhan].[DiaChi] AS [DiaChi], 
+    [v_Current_BenhNhan].[GioiTinh] AS [GioiTinh], 
+    [v_Current_BenhNhan].[Khoa] AS [Khoa], 
+    [v_Current_BenhNhan].[Nhom] AS [Nhom], 
+    [v_Current_BenhNhan].[BacSi] AS [BacSi], 
+    [v_Current_BenhNhan].[SDT] AS [SDT], 
+    [v_Current_BenhNhan].[NgaySinh] AS [NgaySinh], 
+    [v_Current_BenhNhan].[Deleted] AS [Deleted]
+    FROM [dbo].[v_Current_BenhNhan] AS [v_Current_BenhNhan]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_Deleted_BenhNhan" EntityType="Self.v_Deleted_BenhNhan" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_Deleted_BenhNhan].[MaBenhNhan] AS [MaBenhNhan], 
+    [v_Deleted_BenhNhan].[HoBN] AS [HoBN], 
+    [v_Deleted_BenhNhan].[TenBN] AS [TenBN], 
+    [v_Deleted_BenhNhan].[DiaChi] AS [DiaChi], 
+    [v_Deleted_BenhNhan].[GioiTinh] AS [GioiTinh], 
+    [v_Deleted_BenhNhan].[Khoa] AS [Khoa], 
+    [v_Deleted_BenhNhan].[Nhom] AS [Nhom], 
+    [v_Deleted_BenhNhan].[BacSi] AS [BacSi], 
+    [v_Deleted_BenhNhan].[SDT] AS [SDT], 
+    [v_Deleted_BenhNhan].[NgaySinh] AS [NgaySinh], 
+    [v_Deleted_BenhNhan].[Deleted] AS [Deleted]
+    FROM [dbo].[v_Deleted_BenhNhan] AS [v_Deleted_BenhNhan]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__BacSi__Khoa__4CA06362" Association="Self.FK__BacSi__Khoa__4CA06362">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="BacSi" EntitySet="BacSi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BacSi__Nhom__4D94879B" Association="Self.FK__BacSi__Nhom__4D94879B">
+      <End Role="NhomDoiTuong" EntitySet="NhomDoiTuong" />
+      <End Role="BacSi" EntitySet="BacSi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BenhAn__BenhNhan__4E88ABD4" Association="Self.FK__BenhAn__BenhNhan__4E88ABD4">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="BenhAn" EntitySet="BenhAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BenhAn__BenhNhan__4F7CD00D" Association="Self.FK__BenhAn__BenhNhan__4F7CD00D">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="BenhAn" EntitySet="BenhAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonThuoc__MaThuo__534D60F1" Association="Self.FK__DonThuoc__MaThuo__534D60F1">
+      <End Role="Thuoc" EntitySet="Thuoc" />
+      <End Role="DonThuoc" EntitySet="DonThuoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__BenhNhan__5535A963" Association="Self.FK__HoaDon__BenhNhan__5535A963">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__NguoiLap__5629CD9C" Association="Self.FK__HoaDon__NguoiLap__5629CD9C">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NhanVien__Nhom__5812160E" Association="Self.FK__NhanVien__Nhom__5812160E">
+      <End Role="NhomDoiTuong" EntitySet="NhomDoiTuong" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuNhap__BenhN__59FA5E80" Association="Self.FK__PhieuNhap__BenhN__59FA5E80">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="PhieuNhapVien" EntitySet="PhieuNhapVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuNhap__Nguoi__5AEE82B9" Association="Self.FK__PhieuNhap__Nguoi__5AEE82B9">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="PhieuNhapVien" EntitySet="PhieuNhapVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuNhapV__Khoa__5BE2A6F2" Association="Self.FK__PhieuNhapV__Khoa__5BE2A6F2">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="PhieuNhapVien" EntitySet="PhieuNhapVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXetN__BenhN__5CD6CB2B" Association="Self.FK__PhieuXetN__BenhN__5CD6CB2B">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="PhieuXetNghiem" EntitySet="PhieuXetNghiem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXuat__BenhN__5DCAEF64" Association="Self.FK__PhieuXuat__BenhN__5DCAEF64">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="PhieuXuatVien" EntitySet="PhieuXuatVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXuatV__Khoa__5EBF139D" Association="Self.FK__PhieuXuatV__Khoa__5EBF139D">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="PhieuXuatVien" EntitySet="PhieuXuatVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__5FB337D6" Association="Self.FK__Phong__Khoa__5FB337D6">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__60A75C0F" Association="Self.FK__Phong__Khoa__60A75C0F">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__619B8048" Association="Self.FK__Phong__Khoa__619B8048">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__628FA481" Association="Self.FK__Phong__Khoa__628FA481">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__6383C8BA" Association="Self.FK__Phong__Khoa__6383C8BA">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phong__Khoa__6477ECF3" Association="Self.FK__Phong__Khoa__6477ECF3">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="Phong" EntitySet="Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan_BacSi" Association="Self.FK_BenhNhan_BacSi">
+      <End Role="BacSi" EntitySet="BacSi" />
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan_Khoa" Association="Self.FK_BenhNhan_Khoa">
+      <End Role="Khoa" EntitySet="Khoa" />
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan_NhomDoiTuong" Association="Self.FK_BenhNhan_NhomDoiTuong">
+      <End Role="NhomDoiTuong" EntitySet="NhomDoiTuong" />
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Giuong_Phong" Association="Self.FK_Giuong_Phong">
+      <End Role="Phong" EntitySet="Phong" />
+      <End Role="Giuong" EntitySet="Giuong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_DichVu" Association="Self.FK_HoaDon_DichVu">
+      <End Role="DichVu" EntitySet="DichVu" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuDieuTri_BenhNhan" Association="Self.FK_PhieuDieuTri_BenhNhan">
+      <End Role="BenhNhan" EntitySet="BenhNhan" />
+      <End Role="PhieuDieuTri" EntitySet="PhieuDieuTri" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5670364b835b45619249da540c99ab43" Name="Diagram1">
+        <EntityTypeShape EntityType="qlpk1Model.BacSi" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.BenhAn" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.BenhNhan" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.DichVu" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.DonThuoc" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.Giuong" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.HoaDon" Width="1.5" PointX="10.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.Khoa" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.NhanVien" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.NhomDoiTuong" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.PhieuDieuTri" Width="1.5" PointX="7.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.PhieuNhapVien" Width="1.5" PointX="10.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.PhieuXetNghiem" Width="1.5" PointX="7.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.PhieuXuatVien" Width="1.5" PointX="10.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.Phong" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.Thuoc" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="qlpk1Model.User" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="qlpk1Model.FK__BacSi__Khoa__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__BacSi__Nhom__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK_BenhNhan_BacSi" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__BenhAn__BenhNhan__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__BenhAn__BenhNhan__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__HoaDon__BenhNhan__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuNhap__BenhN__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuXetN__BenhN__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuXuat__BenhN__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK_BenhNhan_Khoa" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK_BenhNhan_NhomDoiTuong" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK_PhieuDieuTri_BenhNhan" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK_HoaDon_DichVu" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__DonThuoc__MaThuo__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK_Giuong_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__HoaDon__NguoiLap__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuNhapV__Khoa__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuXuatV__Khoa__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__Phong__Khoa__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__Phong__Khoa__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__Phong__Khoa__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__Phong__Khoa__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__Phong__Khoa__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__Phong__Khoa__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__NhanVien__Nhom__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuNhap__Nguoi__5AEE82B9" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="qlpk1Model.sysdiagram" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="qlpk1Model.v_Current_BenhNhan" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="qlpk1Model.v_Deleted_BenhNhan" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="qlpk1Model.v_LoadBNNT" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="qlpk1Model.v_NoiTru" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="qlpk1Model.v_ShowPhong" Width="1.5" PointX="9.375" PointY="0.75" />
+        <AssociationConnector Association="qlpk1Model.FK__PhieuNhap__Giuon__5C6CB6D7" />
+        <EntityTypeShape EntityType="qlpk1Model.v_Select_BenhAnNotNull" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="qlpk1Model.v_Select_BenhAnNull" Width="1.5" PointX="12.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

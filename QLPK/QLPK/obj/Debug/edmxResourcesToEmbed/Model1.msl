@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="qlpk1ModelStoreContainer" CdmEntityContainer="qlpk1Entities1">
+    <EntitySetMapping Name="BacSis">
+      <EntityTypeMapping TypeName="qlpk1Model.BacSi">
+        <MappingFragment StoreEntitySet="BacSi">
+          <ScalarProperty Name="MaBS" ColumnName="MaBS" />
+          <ScalarProperty Name="HoBS" ColumnName="HoBS" />
+          <ScalarProperty Name="TenBS" ColumnName="TenBS" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenhAns">
+      <EntityTypeMapping TypeName="qlpk1Model.BenhAn">
+        <MappingFragment StoreEntitySet="BenhAn">
+          <ScalarProperty Name="MaBA" ColumnName="MaBA" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="KqDieuTri" ColumnName="KqDieuTri" />
+          <ScalarProperty Name="NoiDungKham" ColumnName="NoiDungKham" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="BenhLy" ColumnName="BenhLy" />
+          <ScalarProperty Name="HuongDieuTri" ColumnName="HuongDieuTri" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenhNhans">
+      <EntityTypeMapping TypeName="qlpk1Model.BenhNhan">
+        <MappingFragment StoreEntitySet="BenhNhan">
+          <ScalarProperty Name="MaBenhNhan" ColumnName="MaBenhNhan" />
+          <ScalarProperty Name="HoBN" ColumnName="HoBN" />
+          <ScalarProperty Name="TenBN" ColumnName="TenBN" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="BacSi" ColumnName="BacSi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DichVus">
+      <EntityTypeMapping TypeName="qlpk1Model.DichVu">
+        <MappingFragment StoreEntitySet="DichVu">
+          <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+          <ScalarProperty Name="TenDV" ColumnName="TenDV" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonThuocs">
+      <EntityTypeMapping TypeName="qlpk1Model.DonThuoc">
+        <MappingFragment StoreEntitySet="DonThuoc">
+          <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="HuongDan" ColumnName="HuongDan" />
+          <ScalarProperty Name="MaThuoc" ColumnName="MaThuoc" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Giuongs">
+      <EntityTypeMapping TypeName="qlpk1Model.Giuong">
+        <MappingFragment StoreEntitySet="Giuong">
+          <ScalarProperty Name="MaGiuong" ColumnName="MaGiuong" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="Phong" ColumnName="Phong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="qlpk1Model.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="DichVu" ColumnName="DichVu" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NguoiLap" ColumnName="NguoiLap" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+          <ScalarProperty Name="NgayKham" ColumnName="NgayKham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoas">
+      <EntityTypeMapping TypeName="qlpk1Model.Khoa">
+        <MappingFragment StoreEntitySet="Khoa">
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+          <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
+          <ScalarProperty Name="SoBN" ColumnName="SoBN" />
+          <ScalarProperty Name="SoPhong" ColumnName="SoPhong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="qlpk1Model.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="HoNV" ColumnName="HoNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhomDoiTuongs">
+      <EntityTypeMapping TypeName="qlpk1Model.NhomDoiTuong">
+        <MappingFragment StoreEntitySet="NhomDoiTuong">
+          <ScalarProperty Name="MaNhom" ColumnName="MaNhom" />
+          <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuDieuTris">
+      <EntityTypeMapping TypeName="qlpk1Model.PhieuDieuTri">
+        <MappingFragment StoreEntitySet="PhieuDieuTri">
+          <ScalarProperty Name="MaPDT" ColumnName="MaPDT" />
+          <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NguoiLap" ColumnName="NguoiLap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuNhapViens">
+      <EntityTypeMapping TypeName="qlpk1Model.PhieuNhapVien">
+        <MappingFragment StoreEntitySet="PhieuNhapVien">
+          <ScalarProperty Name="MaPNV" ColumnName="MaPNV" />
+          <ScalarProperty Name="TgNV" ColumnName="TgNV" />
+          <ScalarProperty Name="NgapLap" ColumnName="NgapLap" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="NguoiLap" ColumnName="NguoiLap" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuXetNghiems">
+      <EntityTypeMapping TypeName="qlpk1Model.PhieuXetNghiem">
+        <MappingFragment StoreEntitySet="PhieuXetNghiem">
+          <ScalarProperty Name="MaPXN" ColumnName="MaPXN" />
+          <ScalarProperty Name="TenLoaiXN" ColumnName="TenLoaiXN" />
+          <ScalarProperty Name="NgayXN" ColumnName="NgayXN" />
+          <ScalarProperty Name="KetQua" ColumnName="KetQua" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuXuatViens">
+      <EntityTypeMapping TypeName="qlpk1Model.PhieuXuatVien">
+        <MappingFragment StoreEntitySet="PhieuXuatVien">
+          <ScalarProperty Name="MaPXV" ColumnName="MaPXV" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="TgDieuTri" ColumnName="TgDieuTri" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="BenhNhan" ColumnName="BenhNhan" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="NguoiLap" ColumnName="NguoiLap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="qlpk1Model.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="SoGiuong" ColumnName="SoGiuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thuocs">
+      <EntityTypeMapping TypeName="qlpk1Model.Thuoc">
+        <MappingFragment StoreEntitySet="Thuoc">
+          <ScalarProperty Name="MaThuoc" ColumnName="MaThuoc" />
+          <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
+          <ScalarProperty Name="TacDung" ColumnName="TacDung" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="qlpk1Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UsersName" ColumnName="UsersName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_Current_BenhNhan">
+      <EntityTypeMapping TypeName="qlpk1Model.v_Current_BenhNhan">
+        <MappingFragment StoreEntitySet="v_Current_BenhNhan">
+          <ScalarProperty Name="MaBenhNhan" ColumnName="MaBenhNhan" />
+          <ScalarProperty Name="HoBN" ColumnName="HoBN" />
+          <ScalarProperty Name="TenBN" ColumnName="TenBN" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="BacSi" ColumnName="BacSi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_Deleted_BenhNhan">
+      <EntityTypeMapping TypeName="qlpk1Model.v_Deleted_BenhNhan">
+        <MappingFragment StoreEntitySet="v_Deleted_BenhNhan">
+          <ScalarProperty Name="MaBenhNhan" ColumnName="MaBenhNhan" />
+          <ScalarProperty Name="HoBN" ColumnName="HoBN" />
+          <ScalarProperty Name="TenBN" ColumnName="TenBN" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="BacSi" ColumnName="BacSi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp__Delete__BenhAn" FunctionName="qlpk1Model.Store.usp__Delete__BenhAn" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__DT" FunctionName="qlpk1Model.Store.usp__Delete__DT" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__DV" FunctionName="qlpk1Model.Store.usp__Delete__DV" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__Phong" FunctionName="qlpk1Model.Store.usp__Delete__Phong" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__PNV" FunctionName="qlpk1Model.Store.usp__Delete__PNV" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__PXN" FunctionName="qlpk1Model.Store.usp__Delete__PXN" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__PXV" FunctionName="qlpk1Model.Store.usp__Delete__PXV" />
+    <FunctionImportMapping FunctionImportName="usp__Delete__Thuoc" FunctionName="qlpk1Model.Store.usp__Delete__Thuoc" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__BenhAn" FunctionName="qlpk1Model.Store.usp__Insert__BenhAn" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__DT" FunctionName="qlpk1Model.Store.usp__Insert__DT" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__DV" FunctionName="qlpk1Model.Store.usp__Insert__DV" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__Phong" FunctionName="qlpk1Model.Store.usp__Insert__Phong" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__PNV" FunctionName="qlpk1Model.Store.usp__Insert__PNV" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__PXN" FunctionName="qlpk1Model.Store.usp__Insert__PXN" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__PXV" FunctionName="qlpk1Model.Store.usp__Insert__PXV" />
+    <FunctionImportMapping FunctionImportName="usp__Insert__Thuoc" FunctionName="qlpk1Model.Store.usp__Insert__Thuoc" />
+    <FunctionImportMapping FunctionImportName="usp__Update__DT" FunctionName="qlpk1Model.Store.usp__Update__DT" />
+    <FunctionImportMapping FunctionImportName="usp__Update__DV" FunctionName="qlpk1Model.Store.usp__Update__DV" />
+    <FunctionImportMapping FunctionImportName="usp__Update__Phong" FunctionName="qlpk1Model.Store.usp__Update__Phong" />
+    <FunctionImportMapping FunctionImportName="usp__Update__PNV" FunctionName="qlpk1Model.Store.usp__Update__PNV" />
+    <FunctionImportMapping FunctionImportName="usp__Update__PXN" FunctionName="qlpk1Model.Store.usp__Update__PXN" />
+    <FunctionImportMapping FunctionImportName="usp__Update__PXV" FunctionName="qlpk1Model.Store.usp__Update__PXV" />
+    <FunctionImportMapping FunctionImportName="usp__Update__Thuoc" FunctionName="qlpk1Model.Store.usp__Update__Thuoc" />
+    <FunctionImportMapping FunctionImportName="usp_Delete_BacSi" FunctionName="qlpk1Model.Store.usp_Delete_BacSi" />
+    <FunctionImportMapping FunctionImportName="usp_Delete_BenhNhan" FunctionName="qlpk1Model.Store.usp_Delete_BenhNhan" />
+    <FunctionImportMapping FunctionImportName="usp_delete_DT" FunctionName="qlpk1Model.Store.usp_delete_DT" />
+    <FunctionImportMapping FunctionImportName="usp_Delete_HD" FunctionName="qlpk1Model.Store.usp_Delete_HD" />
+    <FunctionImportMapping FunctionImportName="usp_Delete_Khoa" FunctionName="qlpk1Model.Store.usp_Delete_Khoa" />
+    <FunctionImportMapping FunctionImportName="usp_Delete_NhanVien" FunctionName="qlpk1Model.Store.usp_Delete_NhanVien" />
+    <FunctionImportMapping FunctionImportName="usp_Insert_BacSi" FunctionName="qlpk1Model.Store.usp_Insert_BacSi" />
+    <FunctionImportMapping FunctionImportName="usp_Insert_BenhNhan" FunctionName="qlpk1Model.Store.usp_Insert_BenhNhan" />
+    <FunctionImportMapping FunctionImportName="usp_insert_DT" FunctionName="qlpk1Model.Store.usp_insert_DT" />
+    <FunctionImportMapping FunctionImportName="usp_Insert_HD" FunctionName="qlpk1Model.Store.usp_Insert_HD" />
+    <FunctionImportMapping FunctionImportName="usp_Insert_Khoa" FunctionName="qlpk1Model.Store.usp_Insert_Khoa" />
+    <FunctionImportMapping FunctionImportName="usp_Insert_NhanVien" FunctionName="qlpk1Model.Store.usp_Insert_NhanVien" />
+    <FunctionImportMapping FunctionImportName="usp_Insert_Nhom" FunctionName="qlpk1Model.Store.usp_Insert_Nhom" />
+    <FunctionImportMapping FunctionImportName="usp_Restore_BenhNhan" FunctionName="qlpk1Model.Store.usp_Restore_BenhNhan" />
+    <FunctionImportMapping FunctionImportName="usp_Select_BacSi" FunctionName="qlpk1Model.Store.usp_Select_BacSi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="qlpk1Model.usp_Select_BacSi_Result">
+          <ScalarProperty Name="MaBS" ColumnName="MaBS" />
+          <ScalarProperty Name="HoBS" ColumnName="HoBS" />
+          <ScalarProperty Name="TenBS" ColumnName="TenBS" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Select_NhanVien" FunctionName="qlpk1Model.Store.usp_Select_NhanVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="qlpk1Model.usp_Select_NhanVien_Result">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="HoNV" ColumnName="HoNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Select_Nhom" FunctionName="qlpk1Model.Store.usp_Select_Nhom">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="qlpk1Model.usp_Select_Nhom_Result">
+          <ScalarProperty Name="MaNhom" ColumnName="MaNhom" />
+          <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Update_BacSi" FunctionName="qlpk1Model.Store.usp_Update_BacSi" />
+    <FunctionImportMapping FunctionImportName="usp_update_DT" FunctionName="qlpk1Model.Store.usp_update_DT" />
+    <FunctionImportMapping FunctionImportName="usp_Update_Khoa" FunctionName="qlpk1Model.Store.usp_Update_Khoa" />
+    <FunctionImportMapping FunctionImportName="usp_Update_NhanVien" FunctionName="qlpk1Model.Store.usp_Update_NhanVien" />
+    <FunctionImportMapping FunctionImportName="usp_Update_Nhom" FunctionName="qlpk1Model.Store.usp_Update_Nhom" />
+  </EntityContainerMapping>
+</Mapping>
